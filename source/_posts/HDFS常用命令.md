@@ -6,6 +6,7 @@ tags: hadoop
 ### 1 配置用户环境变量
 gulyas是hadoop的专属用户，hadoop的目录所属用户及所属用户组都是gulyas。将hadoop的命令配置在gulyas用户的用户环境变量中，只能由gulyas用户才能操作。在配置环境变量的时候，.bashrc和.bash_profile两个文件都可以配置环境变量，但是应该首选.bashrc文件，因为在ssh的时候，会主动刷新用户的.bashrc文件。从而保证我们的环境变量配置可以生效。
 也可以在/etc/profile.d/目录下将自定义的环境变量封装到xxx.sh文件中。linux同样会扫描.sh并加载到PATH环境变量中。
+<!-- more -->
 ```shell
 su - gulyas
 vi .bashrc

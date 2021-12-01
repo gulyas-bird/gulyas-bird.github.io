@@ -3,7 +3,6 @@ title: Hadoop环境搭建
 date: 2019-03-29 14:35:00
 tags: hadoop
 ---
-[toc]
 ## 1 安装jdk
 路径：usr/java/jdk
 ```shell
@@ -22,6 +21,7 @@ source /etc/profile
 # 验证
 java -version  #或者which java
 ```
+<!-- more -->
 ## 2 服务器准备
 ### 2.1 下载上传hadoop
 1、去hadoop.apache.org下载hadoop，使用版本：3.2.2
