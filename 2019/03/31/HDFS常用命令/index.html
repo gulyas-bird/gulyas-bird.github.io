@@ -15,11 +15,13 @@
 <meta property="og:site_name" content="Gulyas">
 <meta property="og:description" content="1 配置用户环境变量gulyas是hadoop的专属用户，hadoop的目录所属用户及所属用户组都是gulyas。将hadoop的命令配置在gulyas用户的用户环境变量中，只能由gulyas用户才能操作。在配置环境变量的时候，.bashrc和.bash_profile两个文件都可以配置环境变量，但是应该首选.bashrc文件，因为在ssh的时候，会主动刷新用户的.bashrc文件。从而保证我们的">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2019/03/31/HDFS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/1.png">
 <meta property="article:published_time" content="2019-03-31T08:58:41.000Z">
-<meta property="article:modified_time" content="2021-12-02T00:51:21.890Z">
+<meta property="article:modified_time" content="2021-12-02T14:08:03.816Z">
 <meta property="article:author" content="土豆烧牛肉">
 <meta property="article:tag" content="hadoop">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2019/03/31/HDFS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Gulyas" type="application/atom+xml">
   
@@ -158,7 +160,7 @@
         <h3 id="1-配置用户环境变量"><a href="#1-配置用户环境变量" class="headerlink" title="1 配置用户环境变量"></a>1 配置用户环境变量</h3><p>gulyas是hadoop的专属用户，hadoop的目录所属用户及所属用户组都是gulyas。将hadoop的命令配置在gulyas用户的用户环境变量中，只能由gulyas用户才能操作。在配置环境变量的时候，.bashrc和.bash_profile两个文件都可以配置环境变量，但是应该首选.bashrc文件，因为在ssh的时候，会主动刷新用户的.bashrc文件。从而保证我们的环境变量配置可以生效。<br>也可以在/etc/profile.d/目录下将自定义的环境变量封装到xxx.sh文件中。linux同样会扫描.sh并加载到PATH环境变量中。</p>
 <span id="more"></span>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">su - gulyas</span><br><span class="line">vi .bashrc</span><br><span class="line">export HADOOP_HOEM=/home/gulyas/app/hadoop</span><br><span class="line">export PATH=$HADOOP/bin:$HADOOP/sbin:$PATH</span><br><span class="line"></span><br><span class="line">source .bashrc</span><br><span class="line">which hadoop # 检查是否配置成功</span><br></pre></td></tr></table></figure>
-<p><a href="./1.png"></a></p>
+<p><img src="/2019/03/31/HDFS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/1.png"></p>
 <h3 id="2-目录访问协议"><a href="#2-目录访问协议" class="headerlink" title="2 目录访问协议"></a>2 目录访问协议</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme://authority/path</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>scheme表示协议<br>authority表示权限</p>
