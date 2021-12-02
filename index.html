@@ -152,7 +152,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-HDFS架构"><a href="#1-HDFS架构" class="headerlink" title="1. HDFS架构"></a>1. HDFS架构</h2><p>   HDFS是一个主从架构，HDFS集群通常由一个NameNode和多个DataNode组成，NameNode保存了文件的元数据，DataNode保存了文件数据。在伪分布式模式下，还有Secondary NameNode，对NameNode进行定时备份，在一定程度上保证集群的可靠性。但是在生产环境中，一般会对NameNode做HA，即部署两台NameNode，多台DataNode。<br><a href="./1.png"></a></p>
+        <h2 id="1-HDFS架构"><a href="#1-HDFS架构" class="headerlink" title="1. HDFS架构"></a>1. HDFS架构</h2><p>   HDFS是一个主从架构，HDFS集群通常由一个NameNode和多个DataNode组成，NameNode保存了文件的元数据，DataNode保存了文件数据。在伪分布式模式下，还有Secondary NameNode，对NameNode进行定时备份，在一定程度上保证集群的可靠性。但是在生产环境中，一般会对NameNode做HA，即部署两台NameNode，多台DataNode。</p>
         
           <a class="article-more-a" href="/2019/04/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/#more">more >></a>
         
