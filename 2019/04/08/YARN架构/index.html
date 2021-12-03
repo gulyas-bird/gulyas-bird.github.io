@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://github.com/gulyas-bird/gulyas-bird.github.io">
   <title>YARN架构 | Gulyas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 yarn基础架构图 2 组件功能描述Resource Manager（RM，YARN的资源管理器）：（1）主要由Applications Manager（应用程序管理器）和Scheduler（任务调度器）构成。（2）处理客户端请求。（3）监控NodeManager。（4）启动或监控Application Master。（5）资源的分配与调度（主要由Scheduler完成）。 Applicati">
+  <meta name="description" content="1 yarn基础架构图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YARN架构">
 <meta property="og:url" content="https://github.com/gulyas-bird/gulyas-bird.github.io/2019/04/08/YARN%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="Gulyas">
-<meta property="og:description" content="1 yarn基础架构图 2 组件功能描述Resource Manager（RM，YARN的资源管理器）：（1）主要由Applications Manager（应用程序管理器）和Scheduler（任务调度器）构成。（2）处理客户端请求。（3）监控NodeManager。（4）启动或监控Application Master。（5）资源的分配与调度（主要由Scheduler完成）。 Applicati">
+<meta property="og:description" content="1 yarn基础架构图">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/gulyas-bird/gulyas-bird.github.io/2019/04/08/YARN%E6%9E%B6%E6%9E%84/1.png">
 <meta property="og:image" content="https://github.com/gulyas-bird/gulyas-bird.github.io/2019/04/08/YARN%E6%9E%B6%E6%9E%84/2.png">
 <meta property="article:published_time" content="2019-04-08T09:44:13.000Z">
-<meta property="article:modified_time" content="2021-12-03T09:57:01.149Z">
+<meta property="article:modified_time" content="2021-12-03T10:03:36.235Z">
 <meta property="article:author" content="土豆烧牛肉">
 <meta property="article:tag" content="hadoop">
 <meta name="twitter:card" content="summary">
@@ -158,7 +158,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-yarn基础架构图"><a href="#1-yarn基础架构图" class="headerlink" title="1 yarn基础架构图"></a>1 yarn基础架构图</h2><p><img src="/gulyas-bird/gulyas-bird.github.io/2019/04/08/YARN%E6%9E%B6%E6%9E%84/1.png"></p>
+        <h2 id="1-yarn基础架构图"><a href="#1-yarn基础架构图" class="headerlink" title="1 yarn基础架构图"></a>1 yarn基础架构图</h2><span id="more"></span>
+<p><img src="/gulyas-bird/gulyas-bird.github.io/2019/04/08/YARN%E6%9E%B6%E6%9E%84/1.png"></p>
 <h2 id="2-组件功能描述"><a href="#2-组件功能描述" class="headerlink" title="2 组件功能描述"></a>2 组件功能描述</h2><h3 id="Resource-Manager（RM，YARN的资源管理器）："><a href="#Resource-Manager（RM，YARN的资源管理器）：" class="headerlink" title="Resource Manager（RM，YARN的资源管理器）："></a>Resource Manager（RM，YARN的资源管理器）：</br></h3><p>（1）主要由Applications Manager（应用程序管理器）和Scheduler（任务调度器）构成。</br><br>（2）处理客户端请求。</br><br>（3）监控NodeManager。</br><br>（4）启动或监控Application Master。</br><br>（5）资源的分配与调度（主要由Scheduler完成）。</br></p>
 <h3 id="Applications-Manager（应用程序管理器）："><a href="#Applications-Manager（应用程序管理器）：" class="headerlink" title="Applications Manager（应用程序管理器）："></a>Applications Manager（应用程序管理器）：</br></h3><p>（1）负责整个系统助攻所有的应用程序。</br><br>（2）应用程序提交、向任务调度器申请资源启动Application Master。</br><br>（3）监控Application Master运行状态，并在失败时重启。</br></p>
 <h3 id="Scheduler（任务调度器）："><a href="#Scheduler（任务调度器）：" class="headerlink" title="Scheduler（任务调度器）："></a>Scheduler（任务调度器）：</br></h3><p>（1）根据系统资源容量以及管理员对队列的限制条件，按照一定的策略将资源分配给正在运行的应用程序。</br><br>（2）任务调度器是一个热插拔模块，可以自定义任务调度器。也可以直接使用其他的任务调度器，例如：Fair Scheduler或者Capacity Scheduler。</br></p>
